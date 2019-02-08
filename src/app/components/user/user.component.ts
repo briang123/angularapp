@@ -2,15 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user',
-  //template: '<h2>John Doe</h2>'
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
-  // styles: [
-  //   `
-  //     h2 {
-  //       color: blue;
-  //     }
-  //   `
-  // ]
 })
-export class UserComponent {}
+export class UserComponent {
+  firstName = 'John';
+  lastName = 'Doe';
+  age = 30;
+  address = {
+    city: 'San Diego',
+    state: 'California',
+    street: '50 main street'
+  };
+
+  constructor() {}
+}
