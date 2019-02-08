@@ -41,7 +41,7 @@
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "test": "ng test"
   },
   "version": "0.0.0"
