@@ -58,7 +58,7 @@ export class UsersComponent implements OnInit {
       //   state: 'CA',
       //   street: '50 Main St.'
       // },
-      age: 9,
+      //age: 9,
       firstName: 'Jill',
       lastName: 'Doe'
     });
