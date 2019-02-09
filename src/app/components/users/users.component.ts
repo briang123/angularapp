@@ -8,6 +8,8 @@ import { User } from 'src/app/models/User';
 })
 export class UsersComponent implements OnInit {
   users: User[];
+  showExtended: boolean = true;
+  loaded: boolean = false;
 
   constructor() {
     console.log('dependency injection');
@@ -47,12 +49,15 @@ export class UsersComponent implements OnInit {
       }
     ];
 
+    this.loaded = true;
+    //this.showExtended = true;
+
     this.addUser({
-      address: {
-        city: 'San Diego',
-        state: 'CA',
-        street: '50 Main St.'
-      },
+      // address: {
+      //   city: 'San Diego',
+      //   state: 'CA',
+      //   street: '50 Main St.'
+      // },
       age: 9,
       firstName: 'Jill',
       lastName: 'Doe'

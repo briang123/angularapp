@@ -1,10 +1,10 @@
 export interface User {
-  age: number;
+  age?: number;
   firstName: string;
   lastName: string;
-  address: {
-    city: string;
-    state: string;
-    street: string;
+  address?: {
+    city?: string;
+    state?: string;
+    street?: string;
   };
 }
