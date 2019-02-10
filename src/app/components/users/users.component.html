@@ -1,9 +1,21 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">
+<button
+  [disabled]="!enableAdd"
+  [ngClass]="{
+    'btn-success': enableAdd,
+    'big-text': showExtended
+  }"
+  class="btn btn-block mb-3"
+>
+  <!-- [ngClass]="currentClasses" -->
   Add New User
 </button>
 <ul *ngIf="loaded && users?.length > 0" class="list-unstyled">
-  <li *ngFor="let user of users" class="card card-body mb-2">
+  <li
+    [class.bg-light]="user.isActive"
+    *ngFor="let user of users"
+    class="card card-body mb-2"
+  >
     <div class="row">
       <div class="col-sm-4">
         <img

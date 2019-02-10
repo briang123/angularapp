@@ -11,6 +11,7 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
+  currentClasses: object = {};
 
   constructor() {
     console.log('dependency injection');
@@ -24,9 +25,10 @@ export class UsersComponent implements OnInit {
           state: 'CA',
           street: '50 Main St.'
         },
-        age: 30,
+        age: 70,
         firstName: 'John',
         image: 'http://lorempixel.com/600/600/people/3',
+        isActive: true,
         lastName: 'Doe'
       },
       {
@@ -38,6 +40,7 @@ export class UsersComponent implements OnInit {
         age: 31,
         firstName: 'Jane',
         image: 'http://lorempixel.com/600/600/people/2',
+        isActive: false,
         lastName: 'Doe'
       },
       {
@@ -49,6 +52,7 @@ export class UsersComponent implements OnInit {
         age: 8,
         firstName: 'Judy',
         image: 'http://lorempixel.com/600/600/people/1',
+        isActive: true,
         lastName: 'Doe'
       }
     ];
@@ -66,9 +70,18 @@ export class UsersComponent implements OnInit {
     //   firstName: 'Jill',
     //   lastName: 'Doe'
     // });
+
+    this.setCurrentClasses();
   }
 
   addUser(user: User) {
     this.users.push(user);
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      'big-text': this.showExtended,
+      'btn-success': this.enableAdd
+    };
   }
 }
