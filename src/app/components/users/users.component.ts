@@ -27,10 +27,12 @@ export class UsersComponent implements OnInit {
           street: '50 Main St.'
         },
         age: 70,
+        balance: 100,
         firstName: 'John',
         image: 'http://lorempixel.com/600/600/people/3',
         isActive: true,
-        lastName: 'Doe'
+        lastName: 'Doe',
+        registered: new Date('02/09/2019 08:30:00')
       },
       {
         address: {
@@ -39,10 +41,12 @@ export class UsersComponent implements OnInit {
           street: '50 Main St.'
         },
         age: 31,
+        balance: 50,
         firstName: 'Jane',
         image: 'http://lorempixel.com/600/600/people/2',
         isActive: false,
-        lastName: 'Doe'
+        lastName: 'Doe',
+        registered: new Date('01/08/2019 05:30:00')
       },
       {
         address: {
@@ -51,10 +55,12 @@ export class UsersComponent implements OnInit {
           street: '50 Main St.'
         },
         age: 8,
+        balance: 75,
         firstName: 'Judy',
         image: 'http://lorempixel.com/600/600/people/1',
         isActive: true,
-        lastName: 'Doe'
+        lastName: 'Doe',
+        registered: new Date('11/07/2018 12:30:00')
       }
     ];
 

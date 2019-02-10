@@ -30,13 +30,23 @@
       </div>
       <div class="col-sm-8">
         <h3 [ngStyle]="currentStyles">
-          {{ user.firstName }} {{ user.lastName }}
+          {{ user.firstName | uppercase }} {{ user.lastName | lowercase }}
         </h3>
         <ul *ngIf="showExtended && user.age && user.address" class="list-group">
           <li class="list-group-item">Age: {{ user.age }}</li>
           <li class="list-group-item">
             Address: {{ user.address.street }} {{ user.address.city }},
             {{ user.address.state }}
+          </li>
+          <li class="list-group-item">
+            Balance: {{ user.balance | currency: 'USD':'symbol' }} until
+            {{ 0.5 | percent }}
+          </li>
+          <li class="list-group-item">
+            Joined: {{ user.registered | date: 'MM/dd/yyyy' }}
+          </li>
+          <li class="list-group-item" ngNonBindable>
+            <pre>{{ 5 | number: '2.4' }}</pre>
           </li>
         </ul>
       </div>
