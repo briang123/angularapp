@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   loaded: boolean = false;
   enableAdd: boolean = true;
   currentClasses: object = {};
+  currentStyles: object = {};
 
   constructor() {
     console.log('dependency injection');
@@ -72,6 +73,7 @@ export class UsersComponent implements OnInit {
     // });
 
     this.setCurrentClasses();
+    this.setCurrentStyles();
   }
 
   addUser(user: User) {
@@ -82,6 +84,13 @@ export class UsersComponent implements OnInit {
     this.currentClasses = {
       'big-text': this.showExtended,
       'btn-success': this.enableAdd
+    };
+  }
+
+  setCurrentStyles() {
+    this.currentStyles = {
+      'font-size': this.showExtended ? '' : '40px',
+      'padding-top': this.showExtended ? '0' : '40px'
     };
   }
 }

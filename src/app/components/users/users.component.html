@@ -13,6 +13,7 @@
 <ul *ngIf="loaded && users?.length > 0" class="list-unstyled">
   <li
     [class.bg-light]="user.isActive"
+    [style.border-color]="user.isActive ? 'green' : ''"
     *ngFor="let user of users"
     class="card card-body mb-2"
   >
@@ -28,7 +29,9 @@
         <!-- <img bind-src="user.image" *ngIf="user.image" alt="{{ user.firstName }} {{ user.lastName }}" class="img-fluid" /> -->
       </div>
       <div class="col-sm-8">
-        <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+        <h3 [ngStyle]="currentStyles">
+          {{ user.firstName }} {{ user.lastName }}
+        </h3>
         <ul *ngIf="showExtended && user.age && user.address" class="list-group">
           <li class="list-group-item">Age: {{ user.age }}</li>
           <li class="list-group-item">
