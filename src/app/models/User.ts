@@ -1,6 +1,7 @@
 export interface User {
   age?: number;
   firstName: string;
+  hide?: boolean;
   isActive?: boolean;
   lastName: string;
   registered?: any;
