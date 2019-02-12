@@ -8,12 +8,7 @@ import { User } from 'src/app/models/User';
 })
 export class UsersComponent implements OnInit {
   user: User = {
-    address: {
-      city: '',
-      state: '',
-      street: ''
-    },
-    age: null,
+    email: '',
     firstName: '',
     lastName: ''
   };
@@ -30,12 +25,7 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.users = [
       {
-        address: {
-          city: 'San Diego',
-          state: 'CA',
-          street: '50 Main St.'
-        },
-        age: 70,
+        email: 'john@yahoo.com',
         firstName: 'John',
         hide: true,
         isActive: true,
@@ -43,12 +33,7 @@ export class UsersComponent implements OnInit {
         registered: new Date('02/09/2019 08:30:00')
       },
       {
-        address: {
-          city: 'San Diego',
-          state: 'CA',
-          street: '50 Main St.'
-        },
-        age: 31,
+        email: 'jane@gmail.com',
         firstName: 'Jane',
         hide: true,
         isActive: false,
@@ -56,12 +41,7 @@ export class UsersComponent implements OnInit {
         registered: new Date('01/08/2019 05:30:00')
       },
       {
-        address: {
-          city: 'San Diego',
-          state: 'CA',
-          street: '50 Main St.'
-        },
-        age: 8,
+        email: 'judy@yahoo.com',
         firstName: 'Judy',
         hide: true,
         isActive: true,
@@ -73,22 +53,17 @@ export class UsersComponent implements OnInit {
     this.loaded = true;
   }
 
-  addUser(user: User) {
-    this.user.isActive = true;
-    this.user.registered = new Date();
-    this.users.unshift(this.user);
+  // addUser(user: User) {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
 
-    this.user = {
-      address: {
-        city: '',
-        state: '',
-        street: ''
-      },
-      age: null,
-      firstName: '',
-      lastName: ''
-    };
-  }
+  //   this.user = {
+  //     email: '',
+  //     firstName: '',
+  //     lastName: ''
+  //   };
+  // }
 
   onSubmit(e: any) {
     e.preventDefault();

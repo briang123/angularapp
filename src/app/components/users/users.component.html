@@ -22,43 +22,15 @@
       />
     </div>
     <div class="form-group">
-      <label>Age</label>
+      <label>Email</label>
       <input
-        [(ngModel)]="user.age"
+        [(ngModel)]="user.email"
         class="form-control"
-        name="age"
-        type="number"
-      />
-    </div>
-    <div class="form-group">
-      <label>Street Address</label>
-      <input
-        [(ngModel)]="user.address.street"
-        class="form-control"
-        name="street"
-        type="text"
-      />
-    </div>
-    <div class="form-group">
-      <label>City</label>
-      <input
-        [(ngModel)]="user.address.city"
-        class="form-control"
-        name="city"
-        type="text"
-      />
-    </div>
-    <div class="form-group">
-      <label>State</label>
-      <input
-        [(ngModel)]="user.address.state"
-        class="form-control"
-        name="state"
-        type="text"
+        name="email"
+        type="email"
       />
     </div>
     <button
-      (click)="addUser()"
       [disabled]="user.firstName == '' || user.lastName == ''"
       class="btn btn-block btn-primary mb-3"
     >
@@ -75,7 +47,7 @@
   >
     <h3>
       {{ user.firstName }} {{ user.lastName }}
-      <small *ngIf="user.age && user.address">
+      <small>
         <button (click)="user.hide = !user.hide" class="btn btn-small btn-dark">
           <i
             [ngClass]="{
@@ -87,12 +59,8 @@
         </button>
       </small>
     </h3>
-    <ul *ngIf="!user.hide && user.age && user.address" class="list-group">
-      <li class="list-group-item">Age: {{ user.age }}</li>
-      <li class="list-group-item">
-        Address: {{ user.address.street }} {{ user.address.city }},
-        {{ user.address.state }}
-      </li>
+    <ul *ngIf="!user.hide" class="list-group">
+      <li class="list-group-item">Email: {{ user.email }}</li>
       <li class="list-group-item">
         Joined: {{ user.registered | date: 'MM/dd/yyyy' }}
       </li>

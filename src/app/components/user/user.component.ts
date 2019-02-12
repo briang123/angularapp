@@ -13,12 +13,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.user = {
-      address: {
-        city: 'San Diego',
-        state: 'CA',
-        street: '50 Main St.'
-      },
-      age: 30,
+      email: 'john@yahoo.com',
       firstName: 'John',
       lastName: 'Doe'
     };

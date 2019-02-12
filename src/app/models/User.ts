@@ -1,13 +1,8 @@
 export interface User {
-  age?: number;
+  email: string;
   firstName: string;
   hide?: boolean;
   isActive?: boolean;
   lastName: string;
   registered?: any;
-  address?: {
-    city?: string;
-    state?: string;
-    street?: string;
-  };
 }
