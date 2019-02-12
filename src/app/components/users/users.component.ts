@@ -11,8 +11,6 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = false;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses: object = {};
-  currentStyles: object = {};
 
   constructor() {
     console.log('dependency injection');
@@ -67,8 +65,4 @@ export class UsersComponent implements OnInit {
   addUser(user: User) {
     this.users.push(user);
   }
-
-  // toggleHide(user: User) {
-  //   user.hide = !user.hide;
-  // }
 }
