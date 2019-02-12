@@ -7,10 +7,21 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    address: {
+      city: '',
+      state: '',
+      street: ''
+    },
+    age: null,
+    firstName: '',
+    lastName: ''
+  };
   users: User[];
   showExtended: boolean = false;
   loaded: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
+  showUserForm: boolean = false;
 
   constructor() {
     console.log('dependency injection');
@@ -63,6 +74,23 @@ export class UsersComponent implements OnInit {
   }
 
   addUser(user: User) {
-    this.users.push(user);
+    this.user.isActive = true;
+    this.user.registered = new Date();
+    this.users.unshift(this.user);
+
+    this.user = {
+      address: {
+        city: '',
+        state: '',
+        street: ''
+      },
+      age: null,
+      firstName: '',
+      lastName: ''
+    };
+  }
+
+  onSubmit(e: any) {
+    e.preventDefault();
   }
 }
