@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/User';
 
 @Component({
@@ -17,10 +17,9 @@ export class UsersComponent implements OnInit {
   loaded: boolean = false;
   enableAdd: boolean = false;
   showUserForm: boolean = false;
+  @ViewChild('userForm') form: any;
 
-  constructor() {
-    console.log('dependency injection');
-  }
+  constructor() {}
 
   ngOnInit() {
     this.users = [
@@ -53,19 +52,17 @@ export class UsersComponent implements OnInit {
     this.loaded = true;
   }
 
-  // addUser(user: User) {
-  //   this.user.isActive = true;
-  //   this.user.registered = new Date();
-  //   this.users.unshift(this.user);
+  onSubmit({ value, valid }: { value: User; valid: boolean }) {
+    if (!valid) {
+      console.log('Form is not valid');
+    } else {
+      value.isActive = true;
+      value.registered = new Date();
+      value.hide = true;
 
-  //   this.user = {
-  //     email: '',
-  //     firstName: '',
-  //     lastName: ''
-  //   };
-  // }
+      this.users.unshift(value);
 
-  onSubmit(e: any) {
-    e.preventDefault();
+      this.form.reset();
+    }
   }
 }
